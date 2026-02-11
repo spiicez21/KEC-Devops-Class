@@ -1,0 +1,59 @@
+ 1  nano ~/.zshrc
+    2  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    3  cls
+    4  clear
+    5  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \\n${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k\n
+    6  nano ~/.zshrc
+    7  git clone https://github.com/zsh-users/zsh-autosuggestions \\n${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions\n\ngit clone https://github.com/zsh-users/zsh-syntax-highlighting \\n${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting\n
+    8  exec zsh
+    9  clear
+   10  sudo systemctl status ssh
+   11  sudo ufw allow ssh
+   12  ip a
+   13  sudo apt update\nsudo apt install openssh-server -y\nsudo systemctl enable ssh\nsudo systemctl start ssh\n
+   14  \t\tping google.com
+   15  curl -I https://update.code.visualstudio.com
+   16  sudo apt install curl ca-certificates -y
+   17  mkdir -p ~/.vscode-server/bin
+   18  clear
+   19  mkdir -p ~/.vscode-server/bin
+   20  sudo apt update\nsudo apt upgrade -y\n
+   21  clear
+   22  sudo apt update\nsudo apt upgrade -y\n
+   23  cl
+   24  clear
+   25  sudo apt install -y ca-certificates curl gnupg\n
+   26  sudo apt update
+   27  clear
+   28  sudo apt update\nsudo apt upgrade -y\n
+   29  clear
+   30  ping 8.8.8.8\n
+   31  ip a\n
+   32  clear
+   33  ip route\n
+   34  sudo dhclient -r\nsudo dhclient\n
+   35  reboot
+   36  ping 8.8.8.8\nping google.com\n
+   37  sudo dhclient -r\nsudo dhclient\n
+   38  ping 8.8.8.8\nping google.com\n
+   39  clear
+   40  sudo apt update\nsudo apt upgrade -y\n
+   41  clear
+   42  sudo apt update\nsudo apt upgrade -y\n
+   43  sudo apt install -y ca-certificates curl gnupg\n
+   44  sudo install -m 0755 -d /etc/apt/keyrings\ncurl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg\nsudo chmod a+r /etc/apt/keyrings/docker.gpg\n
+   45  echo \\n  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \\n  $(. /etc/os-release && echo $VERSION_CODENAME) stable" | \\n  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null\n
+   46  sudo apt update\n
+   47  sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin\n
+   48  sudo docker run hello-world\n
+   49  sudo usermod -aG docker $USER\nnewgrp docker\n
+   50  docker run hello-world\n
+   51  cd spz-docker
+   52  ls
+   53  npm init -y
+   54  clear
+   55  sudo apt install -y nodejs
+   56  history
+   57  ls
+
+
