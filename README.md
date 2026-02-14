@@ -408,5 +408,127 @@ terraform version
 
 ---
 
+## 12. Day 6 – Ansible Installation & Configuration Management
+
+Day 6 automates server setup using Ansible over SSH.
+
+---
+
+### Install Ansible
+
+```bash
+sudo apt update
+sudo apt install ansible -y
+ansible --version
+which ansible
+```
+
+---
+
+### Create Ansible Project
+
+```bash
+cd ~/Projects/devops
+mkdir ansible
+cd ansible
+```
+
+---
+
+### Create Inventory File
+
+```bash
+nano inventory.ini
+```
+
+Inventory with actual server IP:
+
+```
+[web]
+server1 ansible_host=35.85.32.142 ansible_user=ubuntu ansible_ssh_private_key_file=~/Downloads/openssh.pem
+```
+
+Test connection:
+
+```bash
+ansible all -i inventory.ini -m ping
+```
+
+Expected:
+
+```
+server1 | SUCCESS => pong
+```
+
+---
+
+### Create Playbook
+
+```bash
+nano setup.yml
+```
+
+```yaml
+- name: Setup Web Server
+  hosts: web
+  become: true
+
+  tasks:
+    - name: Update packages
+      apt:
+        update_cache: yes
+
+    - name: Install Docker
+      apt:
+        name: docker.io
+        state: present
+
+    - name: Install Nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: Start Nginx
+      service:
+        name: nginx
+        state: started
+        enabled: true
+```
+
+---
+
+### Run Playbook
+
+```bash
+ansible-playbook -i inventory.ini setup.yml
+```
+
+---
+
+### Verify Services
+
+```bash
+ansible all -i inventory.ini -a "systemctl status nginx"
+```
+
+Access:
+
+```
+http://35.85.32.142
+```
+
+---
+
+### Ad-hoc Commands
+
+```bash
+ansible all -i inventory.ini -a "uptime"
+ansible all -i inventory.ini -m apt -a "name=git state=present" --become
+ansible all -i inventory.ini -a "reboot" --become
+```
+
+---
+
+
 
 
