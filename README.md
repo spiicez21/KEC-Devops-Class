@@ -296,4 +296,117 @@ Deployment completed successfully.
 
 ![output](./Images/21.png)
 
+---
+
+## 11. Day 5 – Terraform Installation & Infrastructure Workflow
+
+Day 5 focuses on installing Terraform, configuring AWS credentials, and executing the full Terraform lifecycle including initialization, validation, planning, deployment, and teardown.
+
+---
+
+### Install Terraform
+
+Add HashiCorp repository and install Terraform.
+
+```bash
+sudo apt-get update && sudo apt-get install -y gnupg software-properties-common
+wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg > /dev/null
+gpg --no-default-keyring --keyring /usr/share/keyrings/hashicorp-archive-keyring.gpg --fingerprint
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+sudo apt update
+sudo apt install terraform
+terraform --version
+```
+
+---
+
+### Install AWS CLI
+
+```bash
+sudo apt install awscli
+cd Downloads/
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+aws --version
+```
+
+---
+
+### Configure AWS Credentials
+
+```bash
+aws configure
+aws sts get-caller-identity
+```
+
+This step links Terraform with your AWS account.
+
+---
+
+### Create Terraform Project
+
+```bash
+cd ~/Projects/devops
+mkdir terraform
+cd terraform
+git init
+git checkout -b main
+terraform init
+```
+
+---
+
+### Terraform Development Workflow
+
+Create infrastructure file:
+
+```bash
+touch main.tf
+code .
+```
+
+Format and validate configuration:
+
+```bash
+terraform fmt
+terraform validate
+```
+
+Preview infrastructure changes:
+
+```bash
+terraform plan
+```
+
+Deploy infrastructure:
+
+```bash
+terraform apply
+```
+
+Inspect state:
+
+```bash
+terraform show
+terraform state list
+terraform output
+```
+
+Destroy infrastructure:
+
+```bash
+terraform plan -destroy
+terraform destroy
+```
+
+Check Terraform version:
+
+```bash
+terraform version
+```
+
+---
+
+
 
