@@ -1,0 +1,260 @@
+❯ history
+    1  nano ~/.zshrc
+    2  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    3  cls
+    4  clear
+    5  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \\n${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k\n
+    6  nano ~/.zshrc
+    7  git clone https://github.com/zsh-users/zsh-autosuggestions \\n${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions\n\ngit clone https://github.com/zsh-users/zsh-syntax-highlighting \\n${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting\n
+    8  exec zsh
+    9  clear
+   10  sudo systemctl status ssh
+   11  sudo ufw allow ssh
+   12  ip a
+   13  sudo apt update\nsudo apt install openssh-server -y\nsudo systemctl enable ssh\nsudo systemctl start ssh\n
+   14  \t\tping google.com
+   15  curl -I https://update.code.visualstudio.com
+   16  sudo apt install curl ca-certificates -y
+   17  mkdir -p ~/.vscode-server/bin
+   18  clear
+   19  mkdir -p ~/.vscode-server/bin
+   20  sudo apt update\nsudo apt upgrade -y\n
+   21  clear
+   22  sudo apt update\nsudo apt upgrade -y\n
+   23  cl
+   24  clear
+   25  sudo apt install -y ca-certificates curl gnupg\n
+   26  sudo apt update
+   27  clear
+   28  sudo apt update\nsudo apt upgrade -y\n
+   29  clear
+   30  ping 8.8.8.8\n
+   31  ip a\n
+   32  clear
+   33  ip route\n
+   34  sudo dhclient -r\nsudo dhclient\n
+   35  reboot
+   36  ping 8.8.8.8\nping google.com\n
+   37  sudo dhclient -r\nsudo dhclient\n
+   38  ping 8.8.8.8\nping google.com\n
+   39  clear
+   40  sudo apt update\nsudo apt upgrade -y\n
+   41  clear
+   42  sudo apt update\nsudo apt upgrade -y\n
+   43  sudo apt install -y ca-certificates curl gnupg\n
+   44  sudo install -m 0755 -d /etc/apt/keyrings\ncurl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg\nsudo chmod a+r /etc/apt/keyrings/docker.gpg\n
+   45  echo \\n  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \\n  $(. /etc/os-release && echo $VERSION_CODENAME) stable" | \\n  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null\n
+   46  sudo apt update\n
+   47  sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin\n
+   48  sudo docker run hello-world\n
+   49  sudo usermod -aG docker $USER\nnewgrp docker\n
+   50  docker run hello-world\n
+   51  cd spz-docker
+   52  ls
+   53  npm init -y
+   54  clear
+   55  sudo apt install -y nodejs
+   56  history
+   57  ls
+   58  history
+   59  clear
+   60  sudo apt update\n
+   61  sudo apt install -y nginx\n
+   62  sudo systemctl start nginx\n
+   63  clear
+   64  sudo systemctl start nginx\n
+   65  sudo systemctl enable nginx\n
+   66  sudo systemctl status nginx\n
+   67  sudo ufw allow 'Nginx Full'\nsudo ufw enable\n
+   68  ip a\n
+   69  clear
+   70  docker pull nginx\n
+   71  docker list
+   72  docker help
+   73  docker images
+   74  docker start 341bf0f3ce6c
+   75  docker run 341bf0f3ce6c
+   76  docker run -d -p 8080:80 --name mynginx nginx\n
+   77  docker ps
+   78  curl localhost:8080\n
+   79  docker exec -it mynginx bash\n
+   80  clear
+   81  ls
+   82  git clone https://github.com/spiicez21/SPiceZ-Portfolio.git
+   83  cd SPiceZ-Portfolio
+   84  npm i
+   85  curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -\n
+   86  sudo apt install -y nodejs\n
+   87  node -v\nnpm -v\n
+   88  sudo apt install -y build-essential\n
+   89  npm i
+   90  npm run dev
+   91  cls
+   92  clear
+   93  npm run build
+   94  git pull
+   95  npm run build
+   96  docker rm -f mynginx\n
+   97  docker run -d -p 8080:80 \\n  --name portfolio \\n  -v $(pwd)/build:/usr/share/nginx/html \\n  nginx\n
+   98  docker ps
+   99  docker restart portfolio
+  100  docker rm -f portfolio\n
+  101  docker run -d -p 8080:80 \\n  --name portfolio \\n  -v $(pwd)/dist:/usr/share/nginx/html \\n  nginx\n
+  102  history
+  103  docker ps
+  104  docker exec -it 97c056
+  105  docker exec -it mynginx bash\n
+  106  docker exec -it 97c056b8d13c bash
+  107  sudo apt update\nsudo apt install fontconfig openjdk-21-jre\njava -version
+  108  sudo systemctl enable jenkins
+  109  sudo systemctl start jenkins\n
+  110  YOURPORT=8080\nPERM="--permanent"\nSERV="$PERM --service=jenkins"\n\nfirewall-cmd $PERM --new-service=jenkins\nfirewall-cmd $SERV --set-short="Jenkins ports"\nfirewall-cmd $SERV --set-description="Jenkins port exceptions"\nfirewall-cmd $SERV --add-port=$YOURPORT/tcp\nfirewall-cmd $PERM --add-service=jenkins\nfirewall-cmd --zone=public --add-service=http --permanent\nfirewall-cmd --reload
+  111  curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \\n  /usr/share/keyrings/jenkins-keyring.asc > /dev/null\n\necho deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \\n  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \\n  /etc/apt/sources.list.d/jenkins.list > /dev/null\n\nsudo apt update\nsudo apt install jenkins\n
+  112  echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/" | \\nsudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null\n
+  113  sudo apt update\n
+  114  sudo apt install jenkins\ncurl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | \\nsudo gpg --dearmor -o /usr/share/keyrings/jenkins-keyring.asc\n
+  115  echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/" | \\nsudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null\n
+  116  curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | \\nsudo gpg --dearmor -o /usr/share/keyrings/jenkins-keyring.asc\n
+  117  sudo apt update\n
+  118  sudo apt install jenkins\n
+  119  sudo rm /usr/share/keyrings/jenkins-keyring.asc\n
+  120  curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | \\nsudo gpg --dearmor -o /usr/share/keyrings/jenkins.gpg\n
+  121  echo "deb [signed-by=/usr/share/keyrings/jenkins.gpg] https://pkg.jenkins.io/debian-stable binary/" | \\nsudo tee /etc/apt/sources.list.d/jenkins.list\n
+  122  sudo apt update\n
+  123  sudo rm /usr/share/keyrings/jenkins.gpg\n
+  124  sudo gpg --no-default-keyring \\n  --keyring /usr/share/keyrings/jenkins.gpg \\n  --keyserver keyserver.ubuntu.com \\n  --recv-keys 7198F4B714ABFC68\n
+  125  sudo apt update\n
+  126  sudo apt install dirmngr gnupg\n
+  127  sudo mkdir -p /root/.gnupg\nsudo chmod 700 /root/.gnupg\n
+  128  sudo gpg --no-default-keyring \\n  --keyring /usr/share/keyrings/jenkins.gpg \\n  --keyserver keyserver.ubuntu.com \\n  --recv-keys 7198F4B714ABFC68\n
+  129  curl -fsSL https://keyserver.ubuntu.com/pks/lookup\?op\=get\&search\=0x7198F4B714ABFC68 | \\nsudo gpg --dearmor -o /usr/share/keyrings/jenkins.gpg\n
+  130  sudo apt update\n
+  131  sudo add-apt-repository universe\nsudo apt update\n
+  132  sudo rm /etc/apt/sources.list.d/jenkins.list\n
+  133  sudo apt update\n
+  134  sudo apt install jenkins\n
+  135  wget https://pkg.jenkins.io/debian-stable/binary/jenkins_2.452.1_all.deb\n
+  136  sudo dpkg -i jenkins_2.452.1_all.deb\n
+  137  sudo apt -f install\n
+  138  sudo systemctl enable jenkins\nsudo systemctl start jenkins\nsudo systemctl status jenkins\n
+  139  sudo journalctl -xeu jenkins.service --no-pager\n
+  140  sudo tail -n 50 /var/log/jenkins/jenkins.log\n
+  141  sudo ls /var/log/jenkins\n
+  142  readlink -f $(which java)\n
+  143  sudo nano /etc/default/jenkins\n
+  144  sudo systemctl daemon-reload\nsudo systemctl restart jenkins\n
+  145  sudo systemctl status jenkins\n
+  146  wget https://get.jenkins.io/war-stable/latest/jenkins.war\n
+  147  java -jar jenkins.war\n
+  148  ls -lh jenkins.war\n
+  149  java -jar jenkins.war\n
+  150  java -jar jenkins.war --httpPort=9090\n
+  151  nohup java -jar jenkins.war --httpPort=9090 > jenkins.log 2>&1 &\n
+  152  java -jar jenkins.war --httpPort=3000\n
+  153  tree
+  154  docker ps
+  155  docker stop nginx
+  156  docker stop 97c056b8d13c
+  157  clear
+  158  java -jar jenkins.war\n
+  159  ls -lh jenkins.war\n
+  160  wget https://get.jenkins.io/war-stable/latest/jenkins.war\n
+  161  ls -lh jenkins.war\n
+  162  java -jar jenkins.war\n
+  163  ip a
+  164  java -jar jenkins.war\n
+  165  curl http://localhost:8080\n
+  166  ip a\n
+  167  history
+  168  systemctl status jenkins\n
+  169  ip a
+  170  nano /var/lib/jenkins/secrets/initialAdminPassword\n\n
+  171  sudo cat /var/lib/jenkins/secrets/initialAdminPassword\n
+  172  ls
+  173  pwd
+  174  nano spz.sh
+  175  chmod +x "spz.sh"
+  176  spz.sh
+  177  ./sample.sh\n
+  178  ./spz.sh\n
+  179  nano spz.sh
+  180  df
+  181  sudo systemctl stop jenkins\nsudo systemctl disable jenkins\n
+  182  sudo apt purge jenkins -y\n
+  183  sudo apt autoremove -y\n
+  184  sudo rm -rf /var/lib/jenkins\nsudo rm -rf /etc/jenkins\nsudo rm -rf /var/log/jenkins\n
+  185  rm -rf ~/.jenkins\n
+  186  sudo rm -f /etc/apt/sources.list.d/jenkins.list\nsudo apt update\n
+  187  clear
+  188  sudo apt install openjdk-17-jdk -y
+  189  java --version
+  190  clear
+  191  curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \\n  /usr/share/keyrings/jenkins-keyring.asc > /dev/null\n\necho deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \\n  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \\n  /etc/apt/sources.list.d/jenkins.list > /dev/null\n
+  192  sudo rm -f /etc/apt/sources.list.d/jenkins.list\nsudo apt update\n
+  193  sudo apt update\nsudo apt install jenkins -y\n
+  194  sudo apt update\nsudo apt install openjdk-17-jdk -y\njava -version\n
+  195  curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \\n  /usr/share/keyrings/jenkins-keyring.asc > /dev/null\n\necho deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \\n  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \\n  /etc/apt/sources.list.d/jenkins.list > /dev/null\n
+  196  sudo wget -O /etc/apt/keyrings/jenkins-keyring.asc \\n  https://pkg.jenkins.io/debian-stable/jenkins.io-2026.key\necho "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc]" \\n  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \\n  /etc/apt/sources.list.d/jenkins.list > /dev/null\nsudo apt update\nsudo apt install jenkins
+  197  sudo systemctl enable jenkins
+  198  sudo systemctl start jenkins
+  199  sudo systemctl status jenkins
+  200  sudo cat /var/lib/jenkins/secrets/initialAdminPassword\n\n
+  201  sudo usermod -aG docker jenkins\n
+  202  git clone https://github.com/spiicez21/SPiceZ-Portfolio.git
+  203  sudo apt install nodejs npm -y\n
+  204  npm -v\n
+  205  sudo usermod -aG docker jenkins\n
+  206  sudo systemctl restart jenkins\nsudo reboot\n
+  207  ip a
+  208  clear
+  209  sudo apt-get update && sudo apt-get install -y gnupg software-properties-common
+  210  wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg > /dev/null
+  211  gpg --no-default-keyring --keyring /usr/share/keyrings/hashicorp-archive-keyring.gpg --fingerprint
+  212  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+  213  sudo apt update
+  214  sudo apt install terraform
+  215  terraform --version
+  216  sudo apt install awscli
+  217  cd Downloads/
+  218  curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+  219  unzip awscliv2.zip
+  220  sudo ./aws/install
+  221  aws --version
+  222  aws configure
+  223  aws sts get-caller-identity
+  224  cd ~/Projects/devops
+  225  mkdir terraform
+  226  cd terraform
+  227  git init
+  228  git checkout -b main
+  229  terraform init
+  230  touch main.tf
+  231  code .
+  232  terraform fmt
+  233  terraform validate
+  234  terraform plan
+  235  terraform apply
+  236  terraform show
+  237  terraform state list
+  238  terraform output
+  239  terraform plan -destroy
+  240  terraform destroy
+  241  terraform version
+  242  sudo apt update
+  243  sudo apt install ansible -y
+  244  ansible --version
+  245  which ansible
+  246  cd ~/Projects/devops
+  247  mkdir ansible
+  248  cd ansible
+  249  nano inventory.ini
+  250  ansible all -i inventory.ini -m ping
+  251  nano setup.yml
+  252  ansible-playbook -i inventory.ini setup.yml
+  253  ansible all -i inventory.ini -a "uptime"
+  254  ansible all -i inventory.ini -m apt -a "name=git state=present" --become
+  255  ansible all -i inventory.ini -a "systemctl status nginx"
+  256  ansible all -i inventory.ini -a "reboot" --become
+  257  ansible-inventory -i inventory.ini --list
+  258  ansible-config dump | head
+  259  history
